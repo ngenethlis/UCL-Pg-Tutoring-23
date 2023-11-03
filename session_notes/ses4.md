@@ -46,8 +46,8 @@ void addOne(int *x){
 used like this:
 ```c
 int main(){
-    int x = 145;
-    addOne(&x);
+    int *x = &145;
+    addOne(x);
     printf("%d\n", x);
     return 0;
 }
