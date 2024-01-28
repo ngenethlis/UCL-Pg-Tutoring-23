@@ -21,7 +21,7 @@ What is a struct?
 - the members are stored in memory in the order they are declared
 - the size of the struct is the sum of the sizes of its members
 - the typedef keyword can be used to define a struct and a type in one statement
-- A struct member can have the same name as the struct itself ( can you think of a structure that would use this? )
+- A struct member can have the same type as the struct itself ( can you think of a structure that would use this? )
 
 
 Syntax for declaring a struct :
@@ -130,7 +130,7 @@ struct student {
     int id;
     char name[20];
     float percentage;
-} 
+};
 
 typedef struct student student1;
 ```
@@ -194,7 +194,7 @@ Why would a struct have a member that is the same type as the struct itself?
 typedef struct LinkedListNode {
     int data;
     struct LinkedListNode *next;
-};
+}LinkedListNode;
 ```
 Using the linked list example lets see how we can use pointers and structs
 

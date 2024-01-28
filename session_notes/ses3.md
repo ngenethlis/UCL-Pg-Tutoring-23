@@ -7,8 +7,8 @@
 
 ## Include and Preprocessor Directives
 Some directives you might see:
-`#include <someFile.h`
-`#include "someFile.h`
+`#include <someFile.h>`
+`#include "someFile.h"`
 
 -  `#include` is a preprocessor directive
 -  It tells the compiler to include the contents of another file
@@ -59,6 +59,7 @@ but we still need to define the function in a source file
 
 ```c
 // someFile.c
+#include "someFile.h"
 int add(int a, int b) {
     return a + b;
 }
@@ -67,7 +68,6 @@ int add(int a, int b) {
 ```c
 // main.c
 #include <stdio.h>
-#include "someFile.h"
 int main(void) {
     int a = 5;
     int b = 10;
