@@ -33,16 +33,24 @@ A bloom filter is extremely efficient in both time and space usage. These featur
 Space complexity: O(m)
 Time complexity: O(k) for *both* insert and search
 
-### How to choose m and k?
+
+### How to choose m and k and which hash functions?
 - m: size of the bit array
 - k: number of hash functions
 - n: number of elements in the set
 - p: false positive probability
+- Generally want fast computation and uniform distribution
+- Murmur3 good tradeoff between speed and uniform distribution
+- Cryptographic hash functions have uniform distribution
+- - [Extra reading, "better bloom filter"](https://www.eecs.harvard.edu/~michaelm/postscripts/tr-02-05.pdf)
+hash_i = hash1+ i*hash2
+- So we can use mmh3 as hash1 and sha256 as hash2
 
 Through some [math](https://brilliant.org/wiki/bloom-filter/#properties), we can derive the following:
 
 - Optimal number of hash functions: k = (m/n)ln2
 - Optimal size of bit array: m = -n(lnp) / (ln2)^2
 - p = (1 - e^(-kn/m))^k
+
 
 ## Now you know how to use a bloom filter, but how do you implement it?
